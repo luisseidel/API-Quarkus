@@ -1,0 +1,38 @@
+'%dev':
+  quarkus:
+    http:
+      port: 4030
+    datasource:
+      db-kind: postgresql
+      username: celk
+      password: celk
+      jdbc:
+        url: jdbc:postgresql://localhost:5432/teste_quarkus
+    hibernate-orm:
+      dialect: org.hibernate.dialect.PostgreSQLDialect
+      database:
+        generation: none
+      log:
+        sql: false
+    log:
+      level: INFO
+    flyway:
+      migrate-at-start: false
+      locations: db/migration,db/testdata
+
+  mp:
+    openapi:
+      extensions:
+        smallrye:
+          path: /swagger
+          info:
+            title: API
+            version: 0.0.1
+            description: API for retrieving paises
+            contact:
+              email: techsupport@redhat.com
+              name: Customer API Support
+              url: https://github.com/luisseidel
+            license:
+              name: Apache 2.0
+              url: http://www.apache.org/licenses/LICENSE-2.0.html

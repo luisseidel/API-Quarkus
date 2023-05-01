@@ -1,0 +1,17 @@
+quarkus:
+  http:
+    port: 8081
+  datasource:
+    db-kind: postgresql
+    username: celk
+    password: celk
+    jdbc:
+      url: jdbc:postgresql://localhost:5432/teste_quarkus
+  hibernate-orm:
+    dialect: org.hibernate.dialect.PostgreSQLDialect
+    database:
+      generation: none
+    log:
+      sql: false
+  log:
+    level: INFO
